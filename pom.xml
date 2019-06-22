@@ -8,7 +8,18 @@
     <artifactId>mix</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--版本-->
+    <properties>
+        <kafka.version>1.0.0</kafka.version>
+    </properties>
 
-
+    <dependencies>
+        <!--kafka-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
