@@ -17,14 +17,14 @@ public class CllKafkaProducer {
     public static void main(String[] args){
         Properties props = new Properties();
         // 设置连接参数
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "139.198.189.62:9092");
         props.put("acks", "all");
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         KafkaProducer producer = new KafkaProducer(props);
         for (int a = 0; a <= 10; a++){
-            producer.send(new ProducerRecord("topic-name",Integer.valueOf(a)));
+            producer.send(new ProducerRecord("test-topic",Integer.valueOf(a)));
         }
         // 关闭
         producer.close();

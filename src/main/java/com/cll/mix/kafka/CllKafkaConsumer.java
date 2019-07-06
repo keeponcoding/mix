@@ -18,14 +18,14 @@ public class CllKafkaConsumer {
 
     public static void main(String[] args){
         Properties props = new Properties();
-        props.setProperty("bootstrap.servers", "localhost:9092");
-        props.setProperty("group.id", "test");
+        props.setProperty("bootstrap.servers", "139.198.189.62:9092");
+        props.setProperty("group.id", "test-topic");
         props.setProperty("enable.auto.commit", "true");
         props.setProperty("auto.commit.interval.ms", "1000");
         props.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
-        consumer.subscribe(Arrays.asList("foo", "bar"));
+        consumer.subscribe(Arrays.asList("test-topic"));
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(1000);
             for (ConsumerRecord<String, String> record : records)

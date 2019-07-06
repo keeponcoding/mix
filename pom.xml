@@ -10,7 +10,8 @@
 
     <!--版本-->
     <properties>
-        <kafka.version>1.0.0</kafka.version>
+        <kafka.version>2.1.1</kafka.version>
+        <slf4j.version>1.7.10</slf4j.version>
     </properties>
 
     <dependencies>
@@ -19,6 +20,12 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.7.2</version>
         </dependency>
     </dependencies>
 
