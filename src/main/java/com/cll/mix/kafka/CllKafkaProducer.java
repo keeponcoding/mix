@@ -18,13 +18,20 @@ public class CllKafkaProducer {
         Properties props = new Properties();
         // 设置连接参数
         props.put("bootstrap.servers", "139.198.189.62:9092");
-        props.put("acks", "all");
+        //props.put("acks", "all");
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         KafkaProducer producer = new KafkaProducer(props);
         for (int a = 0; a <= 10; a++){
-            producer.send(new ProducerRecord("test-topic",Integer.valueOf(a)));
+            String msg = "msg_" + a;
+            producer.send(new ProducerRecord("topic-test",msg));
+            System.out.println("消息："+msg+",已发出!");
+            try {
+                Thread.sleep(1000);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
         // 关闭
         producer.close();
