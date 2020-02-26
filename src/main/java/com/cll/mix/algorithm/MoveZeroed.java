@@ -30,7 +30,7 @@ public class MoveZeroed {
     }
 
     public static void moveZeroes(int[] nums) {
-        // 遍历 当前元素前0元素存在的次数
+        // 遍历 当前元素前0元素存在的次数  a
         int zeroes = 0;
         for (int i = 0; i < nums.length; i++) {
             if(nums[i] == 0){
